@@ -1,4 +1,4 @@
-package com.backcountry.fulfillment.oms.commands.api
+package com.backcountry.fulfillment.oms.commands
 
 import com.backcountry.fulfillment.cqrs.commands.api.Command
 import org.springframework.beans.factory.annotation.Autowired

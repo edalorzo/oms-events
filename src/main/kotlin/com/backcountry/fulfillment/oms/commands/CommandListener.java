@@ -1,4 +1,4 @@
-package com.backcountry.fulfillment.oms.commands.api;
+package com.backcountry.fulfillment.oms.commands;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.core.annotation.AliasFor;

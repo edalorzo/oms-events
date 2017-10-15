@@ -3,7 +3,7 @@ package com.backcountry.fulfillment.oms.events.listeners
 
 import com.backcountry.fulfillment.cqrs.commands.oms.ReplicateCustomer
 import com.backcountry.fulfillment.cqrs.events.cms.CustomerCreated
-import com.backcountry.fulfillment.oms.commands.api.CommandBus
+import com.backcountry.fulfillment.oms.commands.CommandBus
 import org.springframework.amqp.rabbit.annotation.RabbitHandler
 import org.springframework.amqp.rabbit.annotation.RabbitListener
 import org.springframework.beans.factory.annotation.Autowired

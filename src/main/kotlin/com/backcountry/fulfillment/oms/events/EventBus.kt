@@ -1,4 +1,4 @@
-package com.backcountry.fulfillment.oms.events.api
+package com.backcountry.fulfillment.oms.events
 
 import com.backcountry.fulfillment.cqrs.events.api.Event
 import org.springframework.beans.factory.annotation.Autowired

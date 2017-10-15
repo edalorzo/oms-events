@@ -3,8 +3,8 @@ package com.backcountry.fulfillment.oms.commands.handlers
 import com.backcountry.fulfillment.cqrs.commands.api.CommandHandler
 import com.backcountry.fulfillment.cqrs.commands.oms.ReplicateCustomer
 import com.backcountry.fulfillment.cqrs.events.oms.CustomerReplicated
-import com.backcountry.fulfillment.oms.commands.api.CommandListener
-import com.backcountry.fulfillment.oms.events.api.EventBus
+import com.backcountry.fulfillment.oms.commands.CommandListener
+import com.backcountry.fulfillment.oms.events.EventBus
 import com.backcountry.fulfillment.oms.model.Customer
 import com.backcountry.fulfillment.oms.repositories.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired
