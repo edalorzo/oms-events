@@ -1,6 +1,7 @@
 package com.backcountry.fulfillment.oms.model
 
-import com.backcountry.fulfillment.oms.commands.CreateCustomer
+
+import com.backcountry.fulfillment.oms.commands.ReplicateCustomer
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
@@ -13,7 +14,7 @@ class Customer(
         @Column(name="cust_fname") var firstName: String,
         @Column(name="cust_lname") var lastName: String) {
 
-    constructor(command: CreateCustomer):this(
+    constructor(command: ReplicateCustomer):this(
             command.email,
             command.firstName,
             command.lastName

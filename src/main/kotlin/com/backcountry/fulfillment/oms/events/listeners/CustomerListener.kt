@@ -1,6 +1,7 @@
 package com.backcountry.fulfillment.oms.events.listeners
 
-import com.backcountry.fulfillment.oms.commands.CreateCustomer
+
+import com.backcountry.fulfillment.oms.commands.ReplicateCustomer
 import com.backcountry.fulfillment.oms.commands.api.CommandBus
 import com.backcountry.fulfillment.oms.events.CustomerCreated
 import org.springframework.amqp.rabbit.annotation.RabbitHandler
@@ -16,6 +17,6 @@ class CustomerListener(@Autowired private val commandBus: CommandBus) {
 
     @RabbitHandler
     fun createCustomer(event: CustomerCreated) {
-        commandBus.publishCommand(CreateCustomer(event))
+        commandBus.publishCommand(ReplicateCustomer(event))
     }
 }
