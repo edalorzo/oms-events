@@ -23,7 +23,7 @@ import javax.persistence.EntityManagerFactory
 class OMSEventsApplication
 
 @Configuration
-class LearnEventsApplicationConfiguration {
+class OMSEventsApplicationConfiguration {
 
     @Bean
     fun rabbitTemplate(connectionFactory: ConnectionFactory): RabbitTemplate {

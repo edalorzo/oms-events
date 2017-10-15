@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class EventBus(@Autowired private val publisher: ApplicationEventPublisher) {
+class EventBus @Autowired constructor(private val publisher: ApplicationEventPublisher) {
 
     fun publishEvent(event: Event) {
         Objects.requireNonNull(event, "The event must not be null")

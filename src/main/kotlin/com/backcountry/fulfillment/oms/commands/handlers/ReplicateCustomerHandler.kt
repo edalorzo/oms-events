@@ -12,14 +12,16 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class ReplicateCustomerHandler(@Autowired val customerRepository: CustomerRepository, val eventBus: EventBus): CommandHandler<ReplicateCustomer> {
+class ReplicateCustomerHandler @Autowired constructor(
+        private val customerRepository: CustomerRepository,
+        private val eventBus: EventBus): CommandHandler<ReplicateCustomer> {
 
     @CommandListener
     override fun handle(command: ReplicateCustomer) {
         if(!customerRepository.findById(command.email).isPresent) {
             customerRepository.save(Customer(command))
         }
-        
+
         eventBus.publishEvent(CustomerReplicated(command))
 
     }
