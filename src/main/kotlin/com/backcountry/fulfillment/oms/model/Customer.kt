@@ -1,7 +1,6 @@
 package com.backcountry.fulfillment.oms.model
 
-
-import com.backcountry.fulfillment.oms.commands.ReplicateCustomer
+import com.backcountry.fulfillment.cqrs.commands.oms.ReplicateCustomer
 import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id

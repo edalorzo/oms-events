@@ -1,12 +1,10 @@
 package com.backcountry.fulfillment.oms
 
-import com.backcountry.fulfillment.oms.events.CustomerCreated
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory
 import org.springframework.amqp.rabbit.connection.ConnectionFactory
 import org.springframework.amqp.rabbit.core.RabbitTemplate
 import org.springframework.amqp.rabbit.transaction.RabbitTransactionManager
-import org.springframework.amqp.support.converter.DefaultJackson2JavaTypeMapper
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -60,14 +58,7 @@ class OMSEventsApplicationConfiguration {
         factory.setAutoStartup(true)
         factory.setConcurrentConsumers(1)
         factory.setMaxConcurrentConsumers(1)
-        val jacksonConverter = Jackson2JsonMessageConverter(ObjectMapper())
-        val eventTypeMapper = DefaultJackson2JavaTypeMapper()
-        eventTypeMapper.idClassMapping = mapOf(
-                "com.backcountry.fulfillment.cms.events.CustomerCreated" to CustomerCreated::class.java
-        )
-        jacksonConverter.javaTypeMapper = eventTypeMapper
-
-        factory.setMessageConverter(jacksonConverter)
+        factory.setMessageConverter(Jackson2JsonMessageConverter(ObjectMapper()))
 
         return factory
     }

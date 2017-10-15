@@ -1,5 +1,6 @@
 package com.backcountry.fulfillment.oms.events.api
 
+import com.backcountry.fulfillment.cqrs.events.api.Event
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Component
