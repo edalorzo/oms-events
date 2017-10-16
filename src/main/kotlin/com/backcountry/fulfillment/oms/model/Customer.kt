@@ -9,9 +9,10 @@ import javax.persistence.Table
 @Entity
 @Table(name = "customers")
 class Customer(
-        @Id @Column(name="cust_email") var email: String,
-        @Column(name="cust_fname") var firstName: String,
-        @Column(name="cust_lname") var lastName: String) {
+        @Id @Column(name="cust_email") val email: String,
+        @Column(name="cust_fname") val firstName: String,
+        @Column(name="cust_lname") val lastName: String,
+        @Column(name = "cust_replicated") val isReplicated: Boolean = false) {
 
     constructor(command: ReplicateCustomer):this(
             command.email,
